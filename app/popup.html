@@ -11,7 +11,19 @@
     <!-- endbuild -->
   </head>
   <body>
-    <h1>Test</h1>
+    <form>
+      <p>Time</p>
+      <input class="input" type="text" name="time" id="time-form">
+      <p>Distance</p>
+      <input class="input" type="number" name="distance">
+      <select>
+        <option value="mile">Miles</option>
+        <option value="kilometer">Kilometer</option>
+        <option value="meter">Meter</option>
+      </select>
+      <p>Pace</p>
+      <input class="input" type="pace" name="pace">
+    </form>
 
     <!-- build:js scripts/popup-vendor.js -->
     <!-- bower:js -->

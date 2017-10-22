@@ -1,4 +1,19 @@
+@import 'reset';
+@import 'form-reset';
+
 $padding: 20px;
+$margin: 10px;
+
+// Body
+
 body {
   padding: $padding;
+  margin: $margin;
+  background-color: red;
+}
+
+// Forms
+
+.input {
+  background-color: white;
 }
