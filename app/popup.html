@@ -13,16 +13,21 @@
   <body>
     <form>
       <p>Time</p>
-      <input class="input" type="text" name="time" id="time-form">
+      <input class="input" type="text" name="time" id="time-input">
       <p>Distance</p>
-      <input class="input" type="number" name="distance">
-      <select>
+      <input class="input" type="number" name="distance" id="distance-input">
+      <select id="distance-unit-select">
         <option value="mile">Miles</option>
         <option value="kilometer">Kilometer</option>
         <option value="meter">Meter</option>
       </select>
       <p>Pace</p>
-      <input class="input" type="pace" name="pace">
+      <input class="input" type="pace" name="pace" id="pace-input">
+      <select id="pace-unit-select">
+          <option value="mile">Miles</option>
+          <option value="kilometer">Kilometer</option>
+          <option value="meter">Meter</option>
+        </select>
     </form>
 
     <!-- build:js scripts/popup-vendor.js -->
