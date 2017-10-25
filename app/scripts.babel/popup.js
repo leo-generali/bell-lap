@@ -21,11 +21,13 @@
     watchTimeForm();
     watchDistanceForm();
     watchPaceForm();
+    addPaceCalculator();
+
   }
 
   function watchTimeForm() {
     const timeForm = document.getElementById('time-input');
-    timeForm.addEventListener('keypress', function (event) {
+    timeForm.addEventListener('keyup', function (event) {
       const keyCode = event.keyCode; 
       if (keyCode >= 48 && keyCode <= 57) {
         formInputs.time = this.value;
@@ -41,7 +43,7 @@
   
   function watchDistanceForm() {
     const distanceForm = document.getElementById('distance-input');
-    distanceForm.addEventListener('keypress', function () {
+    distanceForm.addEventListener('keyup', function () {
       formInputs.distance.length = this.value;
     });
 
@@ -54,7 +56,7 @@
   
   function watchPaceForm() {
     const paceForm = document.getElementById('pace-input');
-    paceForm.addEventListener('keypress', function (event) {
+    paceForm.addEventListener('keyup', function (event) {
       const keyCode = event.keyCode; 
       if (keyCode >= 48 && keyCode <= 57) {
         formInputs.pace.speed = this.value;
@@ -73,7 +75,20 @@
       console.log(formInputs);
     });
   }
+
+  function addPaceCalculator() {
+    const calculatePaceForm = document.getElementById('pace-form');
+    calculatePaceForm.addEventListener('submit', function(event) {
+      calculatePace(event, formInputs.time, formInputs.distance)
+    });
+  }
   
+  function calculatePace(event, time, distance) {
+    const paceMinutes = Math.floor(time / distance.length);
+    const paceSecondsNum = Math.round(((time / distance.length) - paceMinutes) * 60);
+    const paceSeconds = paceSecondsNum.toString().length === 2 ? paceSecondsNum : `0${paceSecondsNum}`;
+    return `${paceMinutes}:${paceSeconds}`;
+  }
   
   
 })();

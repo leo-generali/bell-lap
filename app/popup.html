@@ -11,9 +11,12 @@
     <!-- endbuild -->
   </head>
   <body>
-    <form>
+    <form id="time-form">
       <p>Time</p>
       <input class="input" type="text" name="time" id="time-input">
+      <input type="submit" value="Submit" id="calculate-time">
+    </form>
+    <form id="distance-form">      
       <p>Distance</p>
       <input class="input" type="number" name="distance" id="distance-input">
       <select id="distance-unit-select">
@@ -21,13 +24,17 @@
         <option value="kilometer">Kilometer</option>
         <option value="meter">Meter</option>
       </select>
+      <input type="submit" value="Submit" id="calculate-distance">
+    </form>    
+    <form id="pace-form">    
       <p>Pace</p>
       <input class="input" type="pace" name="pace" id="pace-input">
       <select id="pace-unit-select">
-          <option value="mile">Miles</option>
-          <option value="kilometer">Kilometer</option>
-          <option value="meter">Meter</option>
-        </select>
+        <option value="mile">Miles</option>
+        <option value="kilometer">Kilometer</option>
+        <option value="meter">Meter</option>
+      </select>
+      <input type="submit" value="Submit" id="calculate-pace">
     </form>
 
     <!-- build:js scripts/popup-vendor.js -->
